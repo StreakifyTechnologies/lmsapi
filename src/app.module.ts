@@ -19,6 +19,8 @@ import { CheckEmailVerificationMiddleware } from './_middlewares/checkEmailVerif
 import { AUTH_PATHS } from './_paths/auth';
 import { OtpAndSecretModule } from './otp-and-secret/otp-and-secret.module';
 import { PostModule } from './post/post.module';
+import { SocketsModule } from './sockets/sockets.module';
+import { SocketsGateway } from './sockets/sockets.gateway';
 
 @Module({
   imports: [
@@ -30,6 +32,7 @@ import { PostModule } from './post/post.module';
     RefreshTokenModule,
     OtpAndSecretModule,
     PostModule,
+    SocketsModule,
   ],
   controllers: [AppController],
   providers: [
@@ -42,6 +45,7 @@ import { PostModule } from './post/post.module';
       useClass: JwtAuthGuard,
     },
     AppService,
+    SocketsGateway,
   ],
 })
 export class AppModule implements NestModule {
