@@ -33,7 +33,7 @@ async function bootstrap(): Promise<void> {
     )
     .setVersion('0.1')
     .addServer('http://localhost:3000/', 'Local environment')
-    .addServer('http://think4it.in:3000/', 'Production environment')
+    .addServer('http://think4it.in:3000/', 'Local environment')
     .addBearerAuth()
     .build();
 
